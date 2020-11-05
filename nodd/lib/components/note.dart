@@ -42,12 +42,12 @@ class Note extends StatelessWidget {
                           children: [
                             Center(
                               child: Container(
-                                width: 100,
-                                height: 100,
+                                width: 160,
+                                height: 160,
                                 decoration: BoxDecoration(
                                     border: Border.all(
                                       color: Colors.blue[50],
-                                      width: 5,
+                                      width: 8,
                                     ),
                                     borderRadius: BorderRadius.circular(100)),
                                 child: Center(
@@ -56,7 +56,7 @@ class Note extends StatelessWidget {
                                     child: Text(
                                       'N',
                                       style: GoogleFonts.viga(
-                                        fontSize: 35,
+                                        fontSize: 60,
                                         color: Colors.blue[50],
                                       ),
                                     ),

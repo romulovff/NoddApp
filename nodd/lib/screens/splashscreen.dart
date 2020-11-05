@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nodd/screens/home.dart';
 import 'package:splashscreen/splashscreen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../routing.dart';
 
@@ -16,14 +17,18 @@ class _SplashscreenState extends State<Splashscreen> {
         seconds: 3,
         navigateAfterSeconds: '/home',
         routeName: '/home',
-        title: new Text(
-          'Welcome In SplashScreen',
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+        title: Text(
+          'N',
+          style: GoogleFonts.viga(
+            fontWeight: FontWeight.bold,
+            color: Colors.blue[400],
+            fontSize: 120.0,
+          ),
         ),
         backgroundColor: Colors.white,
         styleTextUnderTheLoader: new TextStyle(),
         photoSize: 100.0,
         onClick: () => print("Flutter Egypt"),
-        loaderColor: Colors.red);
+        loaderColor: Colors.blue[300]);
   }
 }

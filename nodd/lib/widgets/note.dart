@@ -8,6 +8,8 @@ class Note extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String _noddText = 'Caminhe por 10min';
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: RaisedButton(
@@ -68,7 +70,7 @@ class Note extends StatelessWidget {
                               padding: const EdgeInsets.all(16.0),
                               child: Center(
                                 child: Text(
-                                  'Faça 10min de caminhada hoje',
+                                  _noddText,
                                   maxLines: 8,
                                   style: GoogleFonts.viga(
                                     shadows: [

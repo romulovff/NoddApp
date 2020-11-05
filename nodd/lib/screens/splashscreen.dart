@@ -18,11 +18,11 @@ class _SplashscreenState extends State<Splashscreen> {
         navigateAfterSeconds: '/home',
         routeName: '/home',
         title: Text(
-          'N',
+          'NODD',
           style: GoogleFonts.viga(
             fontWeight: FontWeight.bold,
             color: Colors.blue[400],
-            fontSize: 120.0,
+            fontSize: 100.0,
           ),
         ),
         backgroundColor: Colors.white,

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
-import 'package:nodd/components/note.dart';
+import 'package:nodd/widgets/note.dart';
 
 class Home extends StatefulWidget{
   @override

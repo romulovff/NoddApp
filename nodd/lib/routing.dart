@@ -9,7 +9,21 @@ class Routing {
         return MaterialPageRoute(builder: (_) => Home());
         break;
       case '/nodd':
-        return MaterialPageRoute(builder: (_) => Nodd());
+        return PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) => Nodd(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            var begin = Offset(0.0, 1.0);
+            var end = Offset.zero;
+            var curve = Curves.easeInOut;
+
+            var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+            return SlideTransition(
+              position: animation.drive(tween),
+              child: child,
+            );
+          },
+        );
         break;
       default:
         return MaterialPageRoute(

@@ -7,6 +7,8 @@ class Nodd extends StatefulWidget {
 }
 
 class _NoddState extends State<Nodd> {
+  TextEditingController _textController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +32,7 @@ class _NoddState extends State<Nodd> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.keyboard_return,),
+                        icon: Icon(Icons.arrow_downward,),
                         iconSize: 50,
                         color: Colors.white,
                         onPressed: () => {Navigator.pop(context)},
@@ -45,7 +47,9 @@ class _NoddState extends State<Nodd> {
                   child: Padding(
                     padding: EdgeInsets.all(8.0),
                     child: TextField(
+                      controller: _textController,
                       maxLines: 8,
+                      maxLength: 100,
                       style: GoogleFonts.viga(
                         color: Colors.white,
                         fontSize: 36,
@@ -75,7 +79,10 @@ class _NoddState extends State<Nodd> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100),
                   ),
-                  onPressed: () => {Navigator.pop(context)},
+                  onPressed: () => {
+                    print(_textController.text),
+                    Navigator.pop(context)
+                  },
                 ),
               ),
             ],

@@ -15,22 +15,20 @@ class Note extends StatelessWidget {
         elevation: 0,
         onPressed: () => {
           showGeneralDialog(
-            context: context,
-            transitionDuration: Duration(milliseconds: 300),
-            pageBuilder: (context, anim1, anim2) {},
-            barrierDismissible: true,
-            barrierColor: Colors.black.withOpacity(0.4),
-            barrierLabel: '',
-            transitionBuilder: (context, anim1, anim2, child) {
-              return Transform.scale(
-                scale: anim1.value,
-                child: AlertDialog(
-                  contentPadding: EdgeInsets.fromLTRB(4, 4, 4, 4),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  content:
-                      Container(
+              context: context,
+              transitionDuration: Duration(milliseconds: 300),
+              pageBuilder: (context, anim1, anim2) {},
+              barrierDismissible: true,
+              barrierColor: Colors.black.withOpacity(0.4),
+              barrierLabel: '',
+              transitionBuilder: (context, anim1, anim2, child) {
+                return Transform.scale(
+                  scale: anim1.value,
+                  child: AlertDialog(
+                      contentPadding: EdgeInsets.fromLTRB(4, 4, 4, 4),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      content: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(
@@ -40,30 +38,56 @@ class Note extends StatelessWidget {
                         ),
                         width: 100,
                         height: 300,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Center(
-                            child: Text(
-                              'test test test test test test test test test test test test test test test test test test test test ',
-                              maxLines: 8,
-                              style: GoogleFonts.viga(
-                                shadows: [
-                                  Shadow(
-                                    color: Color.fromRGBO(150, 150, 150, 0.1),
-                                    offset: Offset(2, 2)
-                                  )
-                                ],
-                                color: Colors.blue[200],
-                                fontSize: 28,
+                        child: Stack(
+                          children: [
+                            Center(
+                              child: Container(
+                                width: 100,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Colors.blue[50],
+                                      width: 5,
+                                    ),
+                                    borderRadius: BorderRadius.circular(100)),
+                                child: Center(
+                                  child: Transform.rotate(
+                                    angle: -math.pi / 6,
+                                    child: Text(
+                                      'N',
+                                      style: GoogleFonts.viga(
+                                        fontSize: 35,
+                                        color: Colors.blue[50],
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Center(
+                                child: Text(
+                                  'Faça 10min de caminhada hoje',
+                                  maxLines: 8,
+                                  style: GoogleFonts.viga(
+                                    shadows: [
+                                      Shadow(
+                                          color: Color.fromRGBO(
+                                              150, 150, 150, 0.1),
+                                          offset: Offset(2, 2))
+                                    ],
+                                    color: Colors.blue[200],
+                                    fontSize: 28,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      )
-                ),
-              );
-            }
-          ),
+                      )),
+                );
+              }),
         },
         child: Container(
           child: Center(
@@ -71,15 +95,14 @@ class Note extends StatelessWidget {
               width: 70,
               height: 70,
               decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.white,
-                  width: 5,
-                ),
-                borderRadius: BorderRadius.circular(100)
-              ),
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 5,
+                  ),
+                  borderRadius: BorderRadius.circular(100)),
               child: Center(
                 child: Transform.rotate(
-                  angle: - math.pi / 6,
+                  angle: -math.pi / 6,
                   child: Text(
                     'N',
                     style: GoogleFonts.viga(
@@ -97,15 +120,13 @@ class Note extends StatelessWidget {
             color: Colors.blue[200],
             boxShadow: [
               BoxShadow(
-                offset: Offset(2,2),
-                blurRadius: 2,
-                color: Color.fromRGBO(255, 255, 255, 0.1)
-              ),
+                  offset: Offset(2, 2),
+                  blurRadius: 2,
+                  color: Color.fromRGBO(255, 255, 255, 0.1)),
               BoxShadow(
-                offset: Offset(-2,-2),
-                blurRadius: 2,
-                color: Color.fromRGBO(255, 255, 255, 0.1)
-              ),
+                  offset: Offset(-2, -2),
+                  blurRadius: 2,
+                  color: Color.fromRGBO(255, 255, 255, 0.1)),
             ],
             borderRadius: BorderRadius.circular(5),
           ),
@@ -113,5 +134,4 @@ class Note extends StatelessWidget {
       ),
     );
   }
-
 }

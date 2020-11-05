@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:nodd/screens/home.dart';
 import 'package:nodd/screens/nodd.dart';
+import 'package:nodd/screens/splashscreen.dart';
 
 class Routing {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case '/':
+      case '/splash':
+        return MaterialPageRoute(builder: (_) => Splashscreen());
+        break;
+      case '/home':
         return MaterialPageRoute(builder: (_) => Home());
         break;
       case '/nodd':
